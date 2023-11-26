@@ -1,0 +1,42 @@
+*{
+  font-family: sans-serif;
+  --default-color : #888;
+  --actice-color : #f00;
+}
+
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  background-color: #fff;
+  color: var(--default-color);
+  border: 2px solid var(--default-color);
+  font-weight:bold;
+  font-size: medium;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.btn:hover{
+  border-color: var(--actice-color);
+  color: var(--actice-color);
+}
+
+.btn:disabled {
+  cursor: auto;
+}
+
+.liked, .liked:hover {
+  border-color: var(--actice-color);
+  background-color: var(--actice-color);
+  color: #fff;
+}
+
+.error{
+  font-weight: 400;
+  font-size: medium;
+}
