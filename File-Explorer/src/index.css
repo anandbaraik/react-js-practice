@@ -1,0 +1,21 @@
+.folder{
+    color: rgb(26, 132, 253);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.folder-item{
+    font-size: 1.2rem;
+    border-left: 0.1rem solid rgb(8, 7, 7);
+    padding-left: 1rem;
+    margin-left: 1rem;
+}
+
+.d-flex{
+    display: flex;
+    gap: 0.2rem;
+}
+
+.align-items-center {
+    align-items: center;
+}

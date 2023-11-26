@@ -1,0 +1,18 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+button {
+  border: 0.5rem solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+.google_pay {
+  background-color: violet;
+}
+
+.apple_pay {
+  background-color: blueviolet;
+}
