@@ -1,0 +1,31 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.img{
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+.crousel-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+button{
+  padding: 0.5rem;
+  height: 2.5rem;
+  margin: 2rem;
+  text-align: center;
+}
