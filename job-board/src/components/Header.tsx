@@ -1,6 +1,4 @@
-type HeaderProps = {
-    header : string
-};
+import { HeaderProps } from "../types/Header.types"
 const Header = ({header}:HeaderProps) => {
   return (
     <div className='header'>
