@@ -1,0 +1,15 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.section {
+  border: 1px solid;
+  padding: 5px;
+  margin: 5px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.underline {
+  text-decoration: underline;
+}
