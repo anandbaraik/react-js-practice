@@ -12,26 +12,34 @@ function App() {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const fetchJobs = async (activePage:number) => {
     setIsFetching(true);
-    setCurrentPage(activePage);
     let jobIdList = jobIds;
     if(jobIdList === null) {
-        const response = await fetch(`${API_URL}/jobstories.json`);
-        jobIdList = await response.json();
-        setJobIds(jobIdList);
+        try {
+            const response = await fetch(`${API_URL}/jobstories.json`);
+            jobIdList = await response.json();
+            setJobIds(jobIdList);
+        } catch (error) {
+            console.log(`something went wrong while fetching jobIds - `, error);
+            setIsFetching(false);
+            return;
+        }
     }
-    const jobIdsForPage = jobIdList?.slice(
-        activePage * ITEMS_PER_PAGE,
-        activePage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
-    )
 
-    const jobsForPage = await Promise.all(
-        jobIdsForPage?.map((id) => fetch(`${API_URL}/item/${id}.json`).then((res) => res.json()))
-    );
-    setJobs(jobsForPage);
-    setIsFetching(false);
+    try {
+        const jobIdsForPage = jobIdList?.slice(
+            activePage * ITEMS_PER_PAGE,
+            activePage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
+        )
+        const jobsForPage = await Promise.all(jobIdsForPage?.map((id) => fetch(`${API_URL}/item/${id}.json`).then((res) => res.json())) || []);
+        setJobs([...jobs, ...jobsForPage]);
+    } catch (error) {
+        console.log(`something went wrong while fetching jobs - `, error);
+    } finally {
+        setIsFetching(false);
+    }
   }
   useEffect(() => {
-    if(currentPage === 0) fetchJobs(currentPage);
+    fetchJobs(currentPage);
   }, [currentPage]);
   return (
     <>
@@ -50,9 +58,13 @@ function App() {
                                 })
                             }
                         </div>
-                        <button type="button" className={`btn load-more-btn ${isFetching ? 'loading' : ''}`} disabled={isFetching}>
-                            {isFetching ? 'Loading' : 'Load more jobs'}
-                        </button>
+                        {
+                            (jobs.length > 0) && ((currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE) < jobIds.length) && (
+                                <button onClick={() => {setCurrentPage(currentPage + 1)}} type="button" className={`btn load-more-btn ${isFetching ? 'loading' : ''}`} disabled={isFetching}>
+                                    {isFetching ? 'Loading' : 'Load more jobs'}
+                                </button>
+                            )
+                        }
                     </>
                 )
             }
