@@ -1,10 +1,18 @@
 import "./styles.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ProductList from "./pages/ProductList";
+import ProductDetails from "./pages/ProductDetails";
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Router>
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={"/products"} element={<ProductList />} />
+          <Route path={"/products/:id"} element={<ProductDetails />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
