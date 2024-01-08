@@ -1,31 +1,23 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-const ProductDetails = () => {
+import { useParams } from "react-router-dom";
+import { useProducts } from "../context/ProductContext";
+const ProductDetails = (): JSX.Element => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
-  useEffect(() => {
-    const fetchproduct = async () => {
-      const response = await fetch(`https://dummyjson.com/product/${id}`);
-      const productDetails = await response.json();
-      setProduct(productDetails);
-    };
-    fetchproduct();
-  }, []);
-  console.log(product);
+  const products = useProducts();
+  const product = products?.find((product) => product?.id === +id);
   return (
     <div>
       <h1>Product details</h1>
       <div className="product_details">
-        <div className="product_details-img">
-          <img src={product?.thumbnail} alt={product?.title} />
-        </div>
+        <img src={product?.thumbnail} alt={product?.title} />
         <div className="product_details-info">
-          <h3>{product?.title}</h3>
-          <h4>${product?.price}</h4>
+          <h3>
+            {product?.title} (<small>$ {product?.price}</small>)
+          </h3>
+          <p>
+            Rating : {product?.rating} ⭐ | Brand : {product?.brand} | Category
+            : {product?.category}
+          </p>
           <p>{product?.description}</p>
-          <p>Rating : {product?.rating}</p>
-          <p>Brand : {product?.brand}</p>
-          <p>Category : {product?.category}</p>
         </div>
       </div>
     </div>

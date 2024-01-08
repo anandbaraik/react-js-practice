@@ -1,30 +1,13 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useProducts } from "../context/ProductContext";
+import ProductCard from "../components/ProductCard";
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(`https://dummyjson.com/products`);
-      const { products } = await response.json();
-      setProducts(products);
-    };
-    fetchProducts();
-  }, []);
-  console.log(products);
+  const products = useProducts();
   return (
     <div>
       <h1>Product list</h1>
       <div className="product_list">
         {products?.map((product) => {
-          return (
-            <div className="product_card" key={product?.id}>
-              <Link to={`/products/${product.id}`}>
-                <img src={product?.thumbnail} alt={product?.title} />
-                <h3>{product?.title}</h3>
-                <h4>${product?.price}</h4>
-              </Link>
-            </div>
-          );
+          return <ProductCard key={product.id} product={product} />;
         })}
       </div>
     </div>

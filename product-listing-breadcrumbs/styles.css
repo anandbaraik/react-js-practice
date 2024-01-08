@@ -19,17 +19,40 @@
   max-height: 200px;
   object-fit: cover;
 }
-
 .product_card a {
   text-decoration: none;
   color: #333;
 }
 .product_details {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
   align-items: center;
   flex-wrap: wrap;
 }
-
+.product_details img {
+  max-width: 100%;
+  object-fit: cover;
+}
 .product_details-info {
   text-align: center;
+}
+.text-center {
+  text-align: center;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.breadcrumbs {
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 5px;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: #0e0c0c;
+}
+.breadcrumbs span,
+hr {
+  color: #999;
 }
