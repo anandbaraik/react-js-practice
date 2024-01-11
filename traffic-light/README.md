@@ -1,8 +1,13 @@
-# React + Vite
+# Traffic Light
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technology
 
-Currently, two official plugins are available:
+- React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Screenshot
+
+![image](https://github.com/anandbaraik/react-js-practice/assets/31516195/6fb6e907-1231-440f-9a00-e06e12e74cf5)
+
+# video
+
+[![Watch the video](https://github.com/anandbaraik/react-js-practice/assets/31516195/6fb6e907-1231-440f-9a00-e06e12e74cf5)](https://github.com/anandbaraik/react-js-practice/assets/31516195/3e5893ca-f962-4ab7-b028-0f0c2e64b5d8)
