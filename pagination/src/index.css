@@ -37,3 +37,11 @@
   padding: 1rem;
   cursor: pointer;
 }
+
+.pagination__item--active{
+  background-color: rgb(255, 218, 181);
+}
+
+.pagination__item--disabled{
+  cursor: auto !important;
+}
