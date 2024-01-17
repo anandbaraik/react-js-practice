@@ -1,0 +1,9 @@
+.star {
+  font-size: 2rem;
+  color: lightgray;
+  cursor: pointer;
+}
+.star.active,
+.star.hover {
+  color: yellow;
+}
