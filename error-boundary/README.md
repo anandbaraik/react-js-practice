@@ -4,9 +4,11 @@ An error boundary is a component that tracks JavaScript errors that occur anywhe
 
 - Error boundary implements either one or both methods below -
 
-  - static getDerivedStateFromError() : Used to render a fallback UI after error has been thrown. It is called during the render phase, so side effects are not permitted
+  - static getDerivedStateFromError() : used to update the error boundary state. It is called during the render phase, so side effects are not permitted
 
   - componentDidCatch() : used to log error information. which are helpful for debugging & troubleshooting. It is called during the commit phase, so side effects are permitted
+
+  - render() : used to render the fallback UI when an error occurs.
 
 # Limitation
 
