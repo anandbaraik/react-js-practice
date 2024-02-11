@@ -1,0 +1,61 @@
+body{
+  font-family: sans-serif;
+}
+.stepper{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.step{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step__number{
+  width: 30px;
+  height: 30px;
+  background-color: rgb(126, 122, 122);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  z-index: 2;
+}
+
+.step__name{
+  font-size: 0.9rem;
+}
+
+.stepper__action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: rgb(126, 122, 122);
+  border-radius: 0.2rem;
+  border-color: transparent;
+  color: #ffffff;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.complete {
+  background-color: rgb(3, 65, 3);
+  color: #ffffff;
+}
+
+.active {
+  color: #ffffff;
+  background-color: rgb(10, 10, 226);
+}
