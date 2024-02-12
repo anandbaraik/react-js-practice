@@ -43,7 +43,7 @@ body{
   border-radius: 0.2rem;
   border-color: transparent;
   color: #ffffff;
-  width: 5rem;
+  width: auto;
   height: 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -51,11 +51,31 @@ body{
 }
 
 .complete {
-  background-color: rgb(3, 65, 3);
+  background-color: #28a745;
   color: #ffffff;
 }
 
 .active {
   color: #ffffff;
   background-color: rgb(10, 10, 226);
+}
+.stepper_progress-bar {
+  position: absolute;
+  background-color: rgb(202, 198, 198);
+  height: 0.39rem;
+  top: 20%;
+  left: 0;
+}
+
+.stepper__progress {
+  height: 100%;
+  background-color: #28a745;
+  transition: 0.2s ease;
+}
+
+.text-center {
+  text-align: center;
+}
+.mb-5 {
+  margin-bottom: 0.3125rem;
 }
