@@ -17,8 +17,8 @@ body{
 }
 
 .step__number{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: rgb(126, 122, 122);
   color: #ffffff;
   border-radius: 50%;
@@ -63,7 +63,7 @@ body{
   position: absolute;
   background-color: rgb(202, 198, 198);
   height: 0.39rem;
-  top: 20%;
+  top: 25%;
   left: 0;
 }
 

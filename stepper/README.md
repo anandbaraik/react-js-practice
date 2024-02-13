@@ -1,8 +1,14 @@
-# React + Vite
+# Stepper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technology
 
-Currently, two official plugins are available:
+- React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Screenshot
+
+![image](https://github.com/anandbaraik/react-js-practice/assets/31516195/73034167-6c89-4fd1-9273-e6bc938874f4)
+![image](https://github.com/anandbaraik/react-js-practice/assets/31516195/2f83978d-3d27-4580-88c3-52ae2fd45965)
+
+# video
+
+[![Watch the video](https://github.com/anandbaraik/react-js-practice/assets/31516195/2f83978d-3d27-4580-88c3-52ae2fd45965](https://github.com/anandbaraik/react-js-practice/assets/31516195/1205ffcb-47b1-4936-94e8-584dbb29f48c)

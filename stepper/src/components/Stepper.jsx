@@ -8,13 +8,13 @@ const Stepper = ({stepsConfig}) => {
     })
     const stepsRef = useRef([]);
 
-    if(!stepsConfig?.length) {
+    if(!stepsConfig?.steps?.length) {
         return <></>
     }
 
     const handleNext = () => {
         setCurrentStep((prev) => {
-            if(currentStep === stepsConfig.length) {
+            if(currentStep === stepsConfig.steps?.length) {
                 setIsComplete(true);
                 return prev;
             } else {
@@ -36,21 +36,23 @@ const Stepper = ({stepsConfig}) => {
     }
 
     const calculateStepperProgress = () => {
-        return   Math.ceil((currentStep - 1) / (stepsConfig.length - 1) * 100);
+        return   Math.ceil((currentStep - 1) / (stepsConfig?.steps?.length - 1) * 100);
     }
 
     useEffect(() => {
         setMargin(() => ({
             marginLeft : stepsRef.current[currentStep - 1].offsetWidth/2,
-            marginRight :  stepsRef.current[stepsConfig.length - 1].offsetWidth/2
+            marginRight :  stepsRef.current[stepsConfig?.steps?.length - 1].offsetWidth/2
         }))
-    }, [stepsRef, stepsConfig.length]);
-    const ActiveComponent = stepsConfig[currentStep - 1 ]?.component;
+    }, [stepsRef, stepsConfig?.steps?.length]);
+
+    const ActiveComponent = isComplete ? (stepsConfig?.orderPlacedComponent) : (stepsConfig?.steps[currentStep - 1 ]?.component);
+
     return (
         <>
             <div className='stepper'>
                 {
-                    stepsConfig?.map((step, index) => {
+                    stepsConfig?.steps?.map((step, index) => {
                         return (
                             <div className='step' key={step?.name}
                                 ref={el => (stepsRef.current[index] = el)}>
@@ -102,7 +104,7 @@ const Stepper = ({stepsConfig}) => {
                                 handleNext()
                             }}>
                             {
-                                currentStep === stepsConfig.length ? "Complete" : "Next"
+                                currentStep === stepsConfig?.steps?.length ? "Place Order" : "Next"
                             }
                         </button>
                     )
