@@ -4,3 +4,26 @@
   padding: 2rem;
   text-align: center;
 }
+
+.game__board {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.option_btn {
+  cursor: pointer;
+  border: 2px solid #414141;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 0.9rem;
+  transition: 0.2s ease-in;
+}
+.mb-0 {
+  margin-bottom: 0px;
+}
+.pb-0 {
+  padding-bottom: 0px;
+}
