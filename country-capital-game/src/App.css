@@ -27,3 +27,12 @@
 .pb-0 {
   padding-bottom: 0px;
 }
+.selected{
+  border-color: blue;
+}
+.correct {
+  border-color: #66cc99;
+}
+.incorrect {
+  border-color: red;
+}
