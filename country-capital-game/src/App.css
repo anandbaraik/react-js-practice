@@ -36,3 +36,7 @@
 .incorrect {
   border-color: red;
 }
+.option_btn:disabled{
+  cursor: not-allowed;
+  color: black;
+}
