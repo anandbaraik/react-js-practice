@@ -15,13 +15,17 @@ const Game : FC<GamePropType> = ({countries}) => {
   const [matchedOption, setMatchedOption] = useState<string[]>([]);
 
   const handleOptionSelection = (e: SyntheticEvent) => {
+
 	const target = e.target as HTMLInputElement;
+
+	if(target.tagName !== 'BUTTON') return;
+
     const selectedOption = target.getAttribute('data-value');
     const newSelection = selection.concat(selectedOption || "");
 
     if(newSelection.length === 2) {
       /*
-	  * check correctness or incorrectness selection
+	  * check selection correctness or incorrectness
 	  */
 	 const [first, second] = newSelection;
       if(countries[first] === second || countries[second] === first) {
@@ -62,7 +66,8 @@ const Game : FC<GamePropType> = ({countries}) => {
   }
 
   return (
-    <div className='game__board'>
+    <div className='game__board'
+		onClick={handleOptionSelection}>
       {
         options?.map((option) => {
 			if(_.includes(matchedOption, option)) {
@@ -80,7 +85,7 @@ const Game : FC<GamePropType> = ({countries}) => {
 							isCorrect && 'correct', isIncorrect && 'incorrect'
 						)
 					}
-                  data-value={option} onClick={handleOptionSelection}
+                  data-value={option}
 				  disabled={selection.length == 2}>
             		{option}
           		</button>
