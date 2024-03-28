@@ -1,7 +1,11 @@
 import React from 'react'
+export const Tile = ({value}) => {
+  const onClick = () => {
 
-export const Tile = () => {
+  }
   return (
-    <div>Tile</div>
+    <div onClick={onClick} className={`tile `}>
+      {value}
+    </div>
   )
 }

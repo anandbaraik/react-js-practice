@@ -1,6 +1,26 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #23272f;
+  color: #fff;
+}
+h1{
   text-align: center;
+  padding-bottom: 1rem;
+}
+.board{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  cursor: pointer;
+  position: relative;
+}
+.tile{
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: currentColor;
+  border: 0.2rem solid #0074a6;
 }
