@@ -7,6 +7,30 @@ const generateRandomCaptcha = (length) => {
       captcha += characters[randomIndex];
     }
     return captcha;
-  };
+};
 
-  export {generateRandomCaptcha, CAPTCHA_LENGTH};
+
+const generateArithmaticCaptcha = () => {
+  const operators = ["+", "-", "*"];
+  const operator = operators[Math.floor(Math.random() * operators.length)];
+  let firstNum = Math.floor(Math.random() * 100);
+  let secondNum = Math.floor(Math.random() * 100);
+
+  let captcha;
+  switch (operator) {
+    case "+":
+      captcha = `${firstNum} + ${secondNum}`;
+      break;
+    case "-":
+      captcha = `${firstNum} - ${secondNum}`;
+      break;
+    case "*":
+      captcha = `${firstNum} * ${secondNum}`;
+      break;
+    default:
+      captcha = "";
+  }
+  return { captcha, answer: eval(captcha) };
+};
+
+export {generateRandomCaptcha, CAPTCHA_LENGTH, generateArithmaticCaptcha};
